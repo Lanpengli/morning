@@ -18,7 +18,7 @@ app_secret = os.environ["APP_SECRET"]
 user_id = os.environ["USER_ID"]
 template_id = os.environ["TEMPLATE_ID"]
 
-user_id_2=os.environ["TEST"]
+user_id_2='o41cX6CjmkZRN-yyVwcs6TaaKB3s'
 def getweek():
     """
     TODO:
