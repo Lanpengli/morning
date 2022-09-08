@@ -5,6 +5,7 @@ from wechatpy.client.api import WeChatMessage, WeChatTemplate
 import requests
 import os
 import random
+import time
 
 today = datetime.now()
 start_date = os.environ['START_DATE']
@@ -17,6 +18,31 @@ app_secret = os.environ["APP_SECRET"]
 user_id = os.environ["USER_ID"]
 template_id = os.environ["TEMPLATE_ID"]
 
+def getweek():
+    """
+    TODO:
+    Wednesday 匹配数据出错，暂时无法解决
+    :return:
+    """
+    try:
+        week_en = time.strftime("%A", time.localtime(time.time()))
+        week_list = {
+            "Monday": "星期一",
+            "Tuesday": "星期二",
+            "Wednesday ": "星期三",
+            "Thursday": "星期四",
+            "Friday": "星期五",
+            "Saturday": "星期六",
+            "Sunday": "星期日"
+        }
+        currentTime = time.strftime("%Y-%m-%d", time.localtime(time.time()))
+        week = week_list[week_en]
+        day = currentTime + ' ' + week
+        return day
+    except Exception as e:
+        currentTime = time.strftime("%Y-%m-%d", time.localtime(time.time()))
+        day = currentTime + '  星期三'
+        return day
 
 def get_weather():
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
@@ -48,7 +74,7 @@ client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 wea, temperature = get_weather()
-data = {"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
+data = {"date": {"value": getweek(), "color": get_random_color()},"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
 
