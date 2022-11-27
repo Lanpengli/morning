@@ -8,7 +8,7 @@ from wechatpy.client.api import WeChatMessage
 
 # import const
 import time'''
-import const
+
 from datetime import date, datetime
 import math
 from wechatpy import WeChatClient
@@ -45,10 +45,6 @@ user_id_xx = 'o41cX6AOuxNExpqXtBnHd-8cvRro'
 
 
 
-# 嗨小小，要开心呀~	今日宜昌天气：{{weather.DATA}} 温度：{{temperature.DATA}} 有点冷哦要及时增添衣物，不要冻感冒啦 今天是我们认识的第{{love_days.DATA}}天 距离小小的生日还有{{birthday_left.DATA}}天 {{words.DATA}} {{secentence.DATA}}
-
-# template_id_3='WAmDKm_GhJAi-WRnZ-_aFs3l03dpkN3PTT2tu4KVugI'
-# #筱潇终于到啦~	下飞机后带好行李打个车和朋友快快去学校，要时刻注意安全！！！ 今天是{{date.DATA}} 银海天气：{{weather_2.DATA}} 温度：{{temperature_2.DATA}} 宜昌天气：{{weather_1.DATA}} 温度：{{temperature_1.DATA}} 小小每天关注一下天气状况噢，要照顾好自己呀 今天是我们认识的第{{love_days.DATA}}天 距离筱潇的生日还有{{birthday_left.DATA}}天 {{words.DATA}}
 template_id_3 = os.environ["TEMPLATE_ID_3"]
 
 
