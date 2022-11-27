@@ -134,10 +134,10 @@ data = {"weather_1": {"value": wea_1, "color": get_random_color()},
         "weather_2": {"value": wea_2, "color": get_random_color()},
         "temperature_2": {"value": temperature_2, "color": get_random_color()},
 
-        "love_days": {"value": get_count(), "color": get_random_color()},
+        "love_days": {"value": get_count()+1, "color": get_random_color()},
         "birthday_left": {"value": get_birthday(), "color": get_random_color()},
         "words": {"value": get_words(), "color": get_random_color()},
-        "home": {"value": get_home_count(), "color": get_random_color()}
+        "home": {"value": get_home_count()-1, "color": get_random_color()}
 
         }
 res = wm.send_template(user_id_xx, template_id_3, data)
