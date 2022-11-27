@@ -20,7 +20,7 @@ jobs:
       with:
         python-version: '3.x'
         architecture: 'x64'
-    - run: pip install -r ./requirements.txt && python ./main.py
+    - run: pip install -r ./requirements.txt && python ./main_1.py
 
     env:
       APP_ID: ${{ secrets.APP_ID }}
@@ -30,3 +30,4 @@ jobs:
       START_DATE: ${{ secrets.START_DATE }}
       BIRTHDAY: ${{ secrets.BIRTHDAY }}
       CITY: ${{ secrets.CITY }}
+      TEMPLATE_ID_3: ${{ secrets.TEMPLATE_ID_3}}
