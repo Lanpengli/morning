@@ -1,4 +1,4 @@
-import math
+'''import math
 import random
 from datetime import date, datetime
 
@@ -7,6 +7,15 @@ from wechatpy import WeChatClient
 from wechatpy.client.api import WeChatMessage
 
 # import const
+import time'''
+import const
+from datetime import date, datetime
+import math
+from wechatpy import WeChatClient
+from wechatpy.client.api import WeChatMessage, WeChatTemplate
+import requests
+import os
+import random
 import time
 
 # today = datetime.now()
@@ -116,7 +125,7 @@ wea_1, temperature_1 = get_weather(city_1)
 wea_2, temperature_2 = get_weather(city_2)
 
 word_1 = "♥做颗星星，有棱有角 还会发光♥"
-word_2 = "照顾好自己 ，按时吃饭，乖乖睡觉，多喝水，少熬夜,保护好眼睛和耳朵~"
+word_2 = "笨蛋要照顾好自己 ，按时吃饭，乖乖睡觉，多喝水，少熬夜,保护好眼睛和耳朵~"
 # wea_3, temperature_3 = get_weather(city_3)
 data = {"weather_1": {"value": wea_1, "color": get_random_color()},
         "word_1": {"value": word_1, "color": get_random_color()},
